@@ -1,0 +1,105 @@
+<section id="contact" class="section contact">
+  <div class="container">
+    <h2 class="section-title">Get In <span>Touch</span></h2>
+    <div class="contact-content">
+      <div class="contact-info">
+        <h3>Let's talk about your project</h3>
+        <p>
+          Feel free to reach out if you want to collaborate on a project,
+          have a question, or just want to connect.
+        </p>
+        <div class="info-items">
+          <div class="info-item">
+            <div class="icon">
+              <i class="fas fa-envelope"></i>
+            </div>
+            <div class="details">
+              <span class="label">Email</span>
+              <a href="mailto:sahadathossainhasib@gmail.com">sahadathossainhasib&#64;gmail.com</a>
+            </div>
+          </div>
+          <div class="info-item">
+            <div class="icon">
+              <i class="fas fa-phone"></i>
+            </div>
+            <div class="details">
+              <span class="label">Phone</span>
+              <a href="tel:+8801940197130">+880 1940197130</a>
+            </div>
+          </div>
+          <div class="info-item">
+            <div class="icon">
+              <i class="fas fa-map-marker-alt"></i>
+            </div>
+            <div class="details">
+              <span class="label">Location</span>
+              <span>Dhaka, Bangladesh</span>
+            </div>
+          </div>
+        </div>
+        <div class="social-links">
+          <a href="https://linkedin.com/in/shahadathossain" target="_blank" class="social-link">
+            <i class="fab fa-linkedin-in"></i>
+          </a>
+          <a href="https://github.com/shahadathossain" target="_blank" class="social-link">
+            <i class="fab fa-github"></i>
+          </a>
+          <a href="mailto:sahadathossainhasib@gmail.com" class="social-link">
+            <i class="fas fa-envelope"></i>
+          </a>
+        </div>
+      </div>
+      <div class="contact-form">
+        <form (ngSubmit)="onSubmit()">
+          <div class="form-group">
+            <input
+              type="text"
+              [(ngModel)]="formData.name"
+              name="name"
+              placeholder="Your Name"
+              required>
+            <i class="fas fa-user"></i>
+          </div>
+          <div class="form-group">
+            <input
+              type="email"
+              [(ngModel)]="formData.email"
+              name="email"
+              placeholder="Your Email"
+              required>
+            <i class="fas fa-envelope"></i>
+          </div>
+          <div class="form-group">
+            <input
+              type="text"
+              [(ngModel)]="formData.subject"
+              name="subject"
+              placeholder="Subject"
+              required>
+            <i class="fas fa-tag"></i>
+          </div>
+          <div class="form-group">
+            <textarea
+              [(ngModel)]="formData.message"
+              name="message"
+              placeholder="Your Message"
+              rows="5"
+              required></textarea>
+            <i class="fas fa-comment-alt"></i>
+          </div>
+          <button type="submit" class="btn btn-primary" [disabled]="isSubmitting">
+            <span *ngIf="!isSubmitting">
+              <i class="fas fa-paper-plane"></i> Send Message
+            </span>
+            <span *ngIf="isSubmitting">
+              <i class="fas fa-spinner fa-spin"></i> Sending...
+            </span>
+          </button>
+          <p *ngIf="submitMessage" class="submit-message" [class.success]="submitSuccess">
+            {{ submitMessage }}
+          </p>
+        </form>
+      </div>
+    </div>
+  </div>
+</section>

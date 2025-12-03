@@ -1,0 +1,26 @@
+<section id="projects" class="section projects">
+  <div class="container">
+    <h2 class="section-title">Featured <span>Projects</span></h2>
+    <div class="projects-grid">
+      <div *ngFor="let project of projects" class="project-card">
+        <div class="project-icon">
+          <i [class]="project.icon"></i>
+        </div>
+        <div class="project-content">
+          <h3>{{ project.title }}</h3>
+          <p class="client"><i class="fas fa-building"></i> {{ project.client }}</p>
+          <p class="description">{{ project.description }}</p>
+          <div class="technologies">
+            <span *ngFor="let tech of project.technologies" class="tech-tag">{{ tech }}</span>
+          </div>
+          <div class="features">
+            <h4>Key Features:</h4>
+            <ul>
+              <li *ngFor="let feature of project.features">{{ feature }}</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

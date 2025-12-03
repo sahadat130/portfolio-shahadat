@@ -1,0 +1,29 @@
+<section id="education" class="section education">
+  <div class="container">
+    <h2 class="section-title">My <span>Education</span></h2>
+    <div class="education-grid">
+      <div *ngFor="let edu of educations" class="education-card">
+        <div class="card-header">
+          <div class="icon-wrapper">
+            <i [class]="edu.icon"></i>
+          </div>
+          <span class="period">{{ edu.period }}</span>
+        </div>
+        <div class="card-body">
+          <h3>{{ edu.degree }}</h3>
+          <h4>{{ edu.field }}</h4>
+          <p class="institution">
+            <i class="fas fa-university"></i> {{ edu.institution }}
+          </p>
+          <p class="location">
+            <i class="fas fa-map-marker-alt"></i> {{ edu.location }}
+          </p>
+          <div class="cgpa">
+            <span class="label">CGPA</span>
+            <span class="value">{{ edu.cgpa }}</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
